@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const studentDetailSchema = new mongoose.Schema(
+const counsellorDetailSchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -35,11 +35,6 @@ const studentDetailSchema = new mongoose.Schema(
             match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
         },
 
-        fatherName: {
-            type: String,
-            required: [true, "Please enter your father's Name "]
-        },
-
         city: {
             type: String,
             required: [true, "Please enter your city "]
@@ -50,20 +45,15 @@ const studentDetailSchema = new mongoose.Schema(
             required: [true, "Please enter your state "]
         },
 
-        courseSelected: {
+        employeeId: {
             type: String,
-            required: [true, "Please Selct Course "]
-        },
-
-        neetScore: {
-            type: String,
-            required: [true, 'Marks are required'],
+            required: [true, "Please enter your employee ID"]
         }
 
 
     }, { timestamps: true }
 )
 
-const studentModal = mongoose.model('Student', studentDetailSchema)
+const counsellorModal = mongoose.model('Counsellor', counsellorDetailSchema)
 
-export default studentModal
+export default counsellorModal
